@@ -14,11 +14,10 @@ public class DbConnection {
 	private static final String PASSWORD = "0400290DcM$$$";
 
 	private static String getUrl() {
-		return String.format("jdbc:mysql://localhost:3306/projects?user=root&password=0400290DcM$$$&useSSL=false&allowPublicKeyRetrieval=true",
-		 HOST, PORT, SCHEMA, USER, PASSWORD
-		 );
-	}
-
+    return String.format("jdbc:mysql://%s:%d/%s?user=%s&password=%s&useSSL=false&allowPublicKeyRetrieval=true",
+        HOST, PORT, SCHEMA, USER, PASSWORD
+    );
+}
 	public static Connection getConnection() throws SQLException {
 		String url = getUrl();
 		try {
